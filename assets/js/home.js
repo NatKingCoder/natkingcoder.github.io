@@ -1,3 +1,8 @@
 //Amimates Homepage
     $("#intro").hide();
-    $("h1").hide().fadeIn(1000, function(){$("#intro").fadeIn(2000);});
+    $(".banner").hide();
+    $("h1").hide().fadeIn(1000, function () {
+      $("#intro").slideDown(500, function () {
+        $(".banner").fadeIn(500);
+      });
+    });
