@@ -1,3 +1,4 @@
+    /* http://paletton.com/#uid=13x0I0kfHEu5LWbaXOkjRvonQrC */
     body {
       background: rgb(103,153,191);
       background: radial-gradient(circle, rgba(103,153,191,1) 0%, rgba(68,120,161,1) 50%, rgba(43,99,142,1) 100%);
@@ -9,6 +10,7 @@
     h1 {
       font-size: 4em;
       margin-top: 10%;
+      text-decoration: underline;
     }
     #intro {
       margin-left: 15%;
@@ -39,4 +41,49 @@
       color: black;
       border-radius: 1.5vw;
       transition-duration: 0.6s;
+    }
+    .banner {
+      background: linear-gradient(to left,#95BDDB, #C9E0F1);
+      width: 80%;
+      margin-left: 10%;
+      border: 1px solid transparent;
+      border-radius: 2vw;
+      margin-top: 10%;
+    }
+    .banner > h2 {
+      width: 50%;
+      margin-left: 3vw;
+      font-size: 2em;
+      text-decoration: 0.5vw underline overline;
+    }
+    .banner > p {
+      margin-left: 3vw;
+      margin-right: 3vw;
+      width: 50%;
+      font-size: 1.4em;
+    }
+    .banner > a {
+      text-decoration: none;
+      color: white;
+      text-align: right;
+      position: absolute;
+      font-size: 2em;
+      border: 1px solid transparent;
+      transition-duration: 0.6s;
+      padding: 1vw;
+    }
+    .banner > a:hover {
+      border-radius: 2vw;
+      background-color: white;
+      color: black;
+      text-decoration: underline;
+      transition-duration: 0.6s;
+    }
+    .text-right > h2{
+      margin-left: 38.2vw;
+    }
+    .text-right > p {
+      margin-left: 38vw;
+      margin-right: 5vw;
+      width: 50%;
     }
