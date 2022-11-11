@@ -55,7 +55,8 @@
       width: 50%;
       margin-left: 3vw;
       font-size: 2em;
-      text-decoration: 0.5vw underline overline;
+      border-top: 0.5vw solid white;
+      border-bottom: 0.5vw solid white;
     }
     .banner > p {
       margin-left: 3vw;
