@@ -89,3 +89,41 @@
       margin-right: 5vw;
       width: 50%;
     }
+    .left-img-link {
+      float: left
+    }
+    .right-img-link {
+      float: right;
+    }
+    .right-img-link , .left-img-link {
+      margin: 5%;
+      width: 50%;
+      border: 1px solid transparent;
+      border-radius: 2vw;
+      cursor: pointer;
+    }
+    .cont-left > p, .cont-right > p {
+      background: linear-gradient(to left,#95BDDB, #C9E0F1);
+      font-size: 1.5em;
+      position: relative;
+      top: 10vw;
+      padding: 2vw;
+      border: 1px solid transparent;
+      border-radius: 2vw;
+      width: 30%;
+      text-align: left;
+    }
+    .cont-right > p{
+      float: right;
+    }
+    .cont-left > p {
+      float: left;
+    }
+    h3 {
+      border: 0.25vw solid white;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding: 0.5vw;
+      border-radius: 1vw;
+      margin-top: 5%;
+    }
