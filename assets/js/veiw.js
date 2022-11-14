@@ -24,6 +24,7 @@ var projId = localStorage.getItem("projId");
 const buildLink = function (url) {
   var link = "https://turbowarp.org/"url"/embed";
   link = link + pram;
+  $("iframe").attr("src", link);
 }
 if (projId == "rosetheme") {
   name = rosetheme.name;
