@@ -15,7 +15,7 @@ const scrollvar = {
 };
 const va = {
   name: "Virtual Assistant",
-  id: "5418011527",
+  id: "418011527",
   pram: ""
 };
 var name = "";
