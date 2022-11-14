@@ -9,7 +9,7 @@ const pong = {
   pram: ""
 };
 const scrollvar = {
-  name: "One Sprite Pong",
+  name: "Scrolling Variable",
   id: "593482431",
   pram: ""
 };
@@ -25,11 +25,26 @@ const buildLink = function (url) {
   var link = "https://turbowarp.org/" + url + "/embed";
   link = link + pram;
   $("iframe").attr("src", link);
+  $("h1").text(name);
+  $("title").text("NatKingCoder - " + name);
 }
 if (projId == "rosetheme") {
   name = rosetheme.name;
   pram = rosetheme.pram;
   buildLink(rosetheme.id);
 }
-$("h1").text(name);
-$("title").text("NatKingCoder - " + name);
+if (projId == "pong") {
+  name = pong.name;
+  pram = pong.pram;
+  buildLink(pong.id);
+}
+if (projId == "scrollvar") {
+  name = scrollvar.name;
+  pram = scrollvar.pram;
+  buildLink(scrollvar.id);
+}
+if (projId == "va") {
+  name = va.name;
+  pram = va.pram;
+  buildLink(va.id);
+}
