@@ -127,3 +127,11 @@
       border-radius: 1vw;
       margin-top: 5%;
     }
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+    #iframecont {
+      width: 100vw;
+      height: 100vh;
+    }
