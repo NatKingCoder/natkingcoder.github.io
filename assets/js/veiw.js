@@ -18,8 +18,17 @@ const va = {
   id: "5418011527",
   pram: ""
 };
-
+var name = "";
+var pram = "";
 var projId = localStorage.getItem("projId");
-const BuildLink = function (url) {
-  
+const buildLink = function (url) {
+  var link = "https://turbowarp.org/"url"/embed";
+  link = link + pram;
 }
+if (projId == "rosetheme") {
+  name = rosetheme.name;
+  pram = rosethme.pram;
+  buildLink(rosetheme.id);
+}
+$("h1").text(name);
+$("title").text("NatKingCoder - " + name);
