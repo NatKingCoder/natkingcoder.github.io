@@ -28,7 +28,7 @@ const buildLink = function (url) {
 }
 if (projId == "rosetheme") {
   name = rosetheme.name;
-  pram = rosethme.pram;
+  pram = rosetheme.pram;
   buildLink(rosetheme.id);
 }
 $("h1").text(name);
