@@ -22,7 +22,7 @@ var name = "";
 var pram = "";
 var projId = localStorage.getItem("projId");
 const buildLink = function (url) {
-  var link = "https://turbowarp.org/"url"/embed";
+  var link = "https://turbowarp.org/" + url + "/embed";
   link = link + pram;
   $("iframe").attr("src", link);
 }
