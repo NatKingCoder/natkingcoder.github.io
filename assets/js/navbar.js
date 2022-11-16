@@ -5,4 +5,4 @@
       $("<a>").attr("href", "/javascript").text("JavaScript").css("left", "45%").appendTo("#navbar");
       $("<a>").attr("href", "/html").text("HTML").css("left", "65%").appendTo("#navbar");
       $("<a>").attr("href", "/bash").text("BASH").css("left", "78%").appendTo("#navbar");
-      $("<a>").attr("href", "/help").text("Help").css("left", "90%").appendTo("#navbar");
+      $("<a>").attr("href", "/music").text("Music").css("left", "90%").appendTo("#navbar");
