@@ -135,3 +135,9 @@
       width: 100vw;
       height: 80vh;
     }
+    .text-center {
+      float: none;
+    }
+    .text-center > p, .text-center > h2 {
+      width: 90%;
+    }
