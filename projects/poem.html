@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Poem Thing</title>
+  <style>
+    textarea {
+      width: 45vw;
+      height: 80vh;
+      resize: none;
+      font-family: "Helvetica";
+    }
+    #output {
+      float: right;
+    }
+    button {
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <textarea placeholder="Paste Poem Here..." id="input"></textarea>
+  <textarea readonly id="output"></textarea>
+  <button id="go">Generate Letters</button>
+  <script>
+     const genLetters = function () {
+       var input = document.getElementById("input").value;
+       var output = input.charAt(0) + "%20";
+       for (var i = 0; i < input.length; i++) {
+         let char = encodeURIComponent(input.charAt(i));
+         if (char.length > 1) {
+           if (char == "%20") {
+             output = output + input.charAt(i + 1) + char;
+           }
+           if (char == "%0A" || char == "%0D" || char == "%0A%0D") {
+             output = output + char + input.charAt(i + 1) + "%20";
+           }
+           if (char == "%3B") {
+             output = output + char;
+           }
+           if (char == "%3A") {
+             output = output + char;
+           }
+           if (char == "%26") {
+             output = output + char;
+           }
+           if (char == "%21") {
+             output = output + char;
+           }
+           if (char == "%2C") {
+             output = output + char;
+           }
+           if (char == "%2E") {
+             output = output + char;
+           }
+           if (char == "%2D") {
+             output = output + char;
+           }
+         }
+       }
+       document.getElementById("output").innerHTML = decodeURIComponent(output);
+     } 
+     document.getElementById("go").addEventListener("click", genLetters);
+  </script>
+</body>
+</html>
