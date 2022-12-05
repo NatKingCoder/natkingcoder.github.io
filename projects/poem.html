@@ -40,9 +40,17 @@
            }
          }
        }
+       console.log("gen")
        document.getElementById("output").innerHTML = decodeURIComponent(output);
      } 
-     window.setInterval(genLetters, 100);
+     const inputEl = document.getElementById("input");
+     let getLetters;
+     inputEl.addEventListener('focus', function(){
+       getLetters = window.setInterval(genLetters, 100);
+     });
+    inputEl.addEventListener('blur', function(){
+       window.clearInterval(getLetters);
+     });
   </script>
 </body>
 </html>
