@@ -34,10 +34,10 @@
          if (char.length > 1) {
            if (char == "%20") {
              output = output + char + input.charAt(i + 1);
-             lineCount += 1;
            }
             else if (char == "%0A" || char == "%0D" || char == "%0A%0D") {
              output = output + char + input.charAt(i + 1);
+             lineCount++;
            } else {
              output = output + char;
            }
