@@ -14,11 +14,16 @@
     #output {
       float: right;
     }
+    h2 {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <textarea placeholder="Paste Poem Here..." id="input"></textarea>
+  <textarea placeholder="Paste Poem Here..." id="input" spellcheck="false"></textarea>
   <textarea readonly id="output"></textarea>
+  </br>
+  <h2 id=""></h2>
   <script>
      const genLetters = function () {
        var input = document.getElementById("input").value;
@@ -40,7 +45,6 @@
            }
          }
        }
-       console.log("gen")
        document.getElementById("output").innerHTML = decodeURIComponent(output);
      } 
      const inputEl = document.getElementById("input");
