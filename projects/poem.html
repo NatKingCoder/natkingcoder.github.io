@@ -23,16 +23,18 @@
   <textarea placeholder="Paste Poem Here..." id="input" spellcheck="false"></textarea>
   <textarea readonly id="output"></textarea>
   </br>
-  <h2 id=""></h2>
+  <h2 id="disp"></h2>
   <script>
      const genLetters = function () {
        var input = document.getElementById("input").value;
        var output = input.charAt(0);
+       var lineCount = 0;
        for (var i = 0; i < input.length; i++) {
          let char = encodeURIComponent(input.charAt(i));
          if (char.length > 1) {
            if (char == "%20") {
              output = output + char + input.charAt(i + 1);
+             lineCount++;
            }
             else if (char == "%0A" || char == "%0D" || char == "%0A%0D") {
              output = output + char + input.charAt(i + 1);
@@ -46,6 +48,7 @@
          }
        }
        document.getElementById("output").innerHTML = decodeURIComponent(output);
+       document.getElementById("disp").textContent = "Lines: " + lineCount;
      } 
      const inputEl = document.getElementById("input");
      let getLetters;
