@@ -75,40 +75,23 @@ By NatKingCoder
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script>
-    const imgs = ["https://wallpaperaccess.com/full/52447.jpg", "https://images.pexels.com/photos/1482476/pexels-photo-1482476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://thumbs.dreamstime.com/b/cool-wallpapers-backgrounds-check-out-our-68126782.jpg", "https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds_181624-11068.jpg?w=2000", "https://i.ytimg.com/vi/LDU_Txk06tM/mqdefault.jpg"];
-    let imgNum = 0;
-    let cycle = 1;
-    let inTrans = 1;
-    let interact = 0;
-    $("#location").text((imgNum + 1) + "/" + imgs.length);
-    $("<img>").attr("src", imgs[0]).attr("id", "img1").hide().prependTo("#imgcont").fadeIn(2000, function(){inTrans = 0});
+    const opts = {
+      //Insert all image urls you want
+      imgs: ["https://wallpaperaccess.com/full/52447.jpg", "https://images.pexels.com/photos/1482476/pexels-photo-1482476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://thumbs.dreamstime.com/b/cool-wallpapers-backgrounds-check-out-our-68126782.jpg", "https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds_181624-11068.jpg?w=2000", "https://i.ytimg.com/vi/LDU_Txk06tM/mqdefault.jpg"],
+      //Auto advance
+      auto: true, //Set to true or false
+      interval: 8000, //Time in ms between transations
+      //User input
+      user: true, //Set to true or false
+      //Show status
+      status: true //Set to true or false
+    };
     
-    const checkLim = function () {
-      if (imgNum < 0) {
-        imgNum = imgs.length - 1;
-      }
-      if (imgNum > imgs.length - 1) {
-        imgNum = 0;
-      }
-    }
-    const transition = function () {
-      checkLim();
-      $("#location").text((imgNum + 1) + "/" + imgs.length);
-      if (cycle == 1) {
-        $("#img1").css("top", "-50.9vh").fadeOut(2000, function(){$(this).remove()});
-        $("<img>").attr("src", imgs[imgNum]).attr("id", "img2").prependTo("#imgcont").hide().fadeIn(2000, function(){inTrans = 0});
-        cycle = 2;
-      } else {
-        $("#img2").css("top", "-50.9vh").fadeOut(2000, function(){$(this).remove()});
-        $("<img>").attr("src", imgs[imgNum]).attr("id", "img1").prependTo("#imgcont").hide().fadeIn(2000, function(){inTrans = 0});
-        cycle = 1;
-      }
-    }
-    //Event Listeners
-    $("#arrowback").on("click", function(){if (inTrans == 0){imgNum--; inTrans = 1; interact = 1; transition(imgNum)}});
-    $("#arrowfront").on("click", function(){if (inTrans == 0){imgNum++; inTrans = 1; interact = 1; transition(imgNum)}});
-    //Auto Advance
-    window.setInterval(function(){if (interact == 0) {imgNum++; transition();} else {interact = 0;}}, 8000);
+    
+    
+    
+    //Dont mess with...
+    let imgNum = 0; let cycle = 1; let inTrans = 1; let interact = 0; if (opts.status) {$("#location").text((imgNum + 1) + "/" + opts.imgs.length);}$("<img>").attr("src", opts.imgs[0]).attr("id", "img1").hide().prependTo("#imgcont").fadeIn(2000, function(){inTrans = 0});const checkLim = function () {if (imgNum < 0) {imgNum = opts.imgs.length - 1;}if (imgNum > opts.imgs.length - 1) {imgNum = 0;}}const transition = function () {checkLim();if (opts.status) {$("#location").text((imgNum + 1) + "/" + opts.imgs.length);}if (cycle == 1) {$("#img1").css("top", "-50.9vh").fadeOut(2000, function(){$(this).remove()});$("<img>").attr("src", opts.imgs[imgNum]).attr("id", "img2").prependTo("#imgcont").hide().fadeIn(2000, function(){inTrans = 0});cycle = 2;} else {$("#img2").css("top", "-50.9vh").fadeOut(2000, function(){$(this).remove()});$("<img>").attr("src", opts.imgs[imgNum]).attr("id", "img1").prependTo("#imgcont").hide().fadeIn(2000, function(){inTrans = 0});cycle = 1;}}if (opts.user) {$("#arrowback").on("click", function(){if (inTrans == 0){imgNum--; inTrans = 1; interact = 1; transition(imgNum)}});$("#arrowfront").on("click", function(){if (inTrans == 0){imgNum++; inTrans = 1; interact = 1; transition(imgNum)}});} else {$("#arrowback").hide();$("#arrowfront").hide();}if (opts.auto) {window.setInterval(function(){if (interact == 0) {imgNum++; transition();} else {interact = 0;}}, opts.interval);}
   </script>
 </body>
 </html>
