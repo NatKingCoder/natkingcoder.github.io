@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    #input {
+      resize: none;
+      height: 75vh;
+      width: 50vw;
+    }
+    #resultCont {
+      width: 90vw;
+      margin-top: 3vw;
+      height: 40px;
+      overflow: scroll;
+      white-space: nowrap;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="input" placeholder="Paste Items Here..."></textarea>
+  </br>
+  <div id="resultCont">
+    <code id="output">let array = [];</code>
+  </div>
+  <script>
+      var data = [];
+          const getData = function () {
+            data = [];
+            let input = document.getElementById("input").value;
+            let build = "'";
+            for (var i = 0; i < input.length; i++) {
+              if (encodeURIComponent(input.charAt(i)) == "%0A" || encodeURIComponent(input.charAt(i)) == "%0D" || encodeURIComponent(input.charAt(i)) == "%0A%0D") {
+                if (build !== "'") {
+                 data.push(build + "'");
+                }
+                build = "'";
+              } else {
+                build = build + input.charAt(i);
+              }
+            }  
+            data.push(build + "'");
+            document.getElementById("output").textContent = "let array = [" + data + "];";
+          }
+       document.getElementById("input").addEventListener("blur", getData);   
+  </script>
+</body>
+</html>
