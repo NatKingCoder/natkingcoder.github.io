@@ -8,7 +8,7 @@
       const ovoEl = document.getElementById("ovo");
       const launchGame = function (gameId) {
         localStorage.setItem("gameId", gameId);
-        window.location.href = "/play";
+        window.location.href = "/projects/ehub/play";
       }
       brEl.addEventListener("click", function(){launchGame("br");});
       lolEl.addEventListener("click", function(){launchGame("lol");});
