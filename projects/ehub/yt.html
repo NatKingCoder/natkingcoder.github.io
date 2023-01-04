@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2022 by NatKingCoder (http://jsbin.com/sotuxod/9/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>eHub - YouTube</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/youtube.css">
+</head>
+<body>
+  <details>
+      <summary id="menuhead">Menu</summary>
+      <a href="/games" style="margin-top: 7%;">Games</a>
+      <br>
+      <a href="/yt">YouTube</a>
+      <br>
+      <a href="/">Home</a>
+  </details>
+ <h1>YouTube</h1>
+  <br>
+  <div class="textleft" style="margin-top: 10%">
+    <h2>About this Player</h2>
+    <p>To the right is a simple embedded YouTube player. Simply paste in your YouTube link and enjoy! To input
+      a playlist, select "Playlist" in the drop down menu below the Get Video button! Your video/playlist will appear below!</p>
+  </div>
+  <div>
+    <input type="url"  placeholder="Paste Link Here..." id="url">
+    <button id="button">Get Video</button>
+    <br>
+    <div id="dropdown">
+    <label for="type">Select Link Type</label>
+      <select name="type" id="type">
+        <option value="regvid">Single Video</option>
+        <option value="playlist">Playlist</option>
+    </div>
+</select>
+  </div>
+  <iframe id= "vid" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<script src="assets/js/youtube.js"></script>
+</body>
+</html>
